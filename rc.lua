@@ -377,5 +377,5 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 -- }}}
 
 
-
+awful.util.spawn_with_shell("nm-applet")
 
