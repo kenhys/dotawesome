@@ -10,6 +10,8 @@ require("naughty")
 -- Load Debian menu entries
 require("debian.menu")
 
+require("obvious")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -181,6 +183,11 @@ for s = 1, screen.count() do
         mylayoutbox[s],
         mytextclock,
         s == 1 and mysystray or nil,
+        obvious.cpu(),
+        obvious.mem(),
+        obvious.wlan("wlan0"),
+        obvious.loadavg(),
+        obvious.battery(),
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
